@@ -18,3 +18,12 @@ $router->get('/', function () use ($router) {
 $router->get('user/{id}', function ($id) {
     return 'User '.$id;
 });
+
+/**
+ * Routes for resource maquinas
+ */
+$app->get('maquinas', 'MaquinasController@all');
+$app->get('maquinas/{id}', 'MaquinasController@get');
+$app->post('maquinas', 'MaquinasController@add');
+$app->put('maquinas/{id}', 'MaquinasController@put');
+$app->delete('maquinas/{id}', 'MaquinasController@remove');

@@ -2,4 +2,21 @@ composer global require "laravel/lumen-installer"
 
 lumen new app-cafe
 
+--Para correr los comandos de autogenaracion de clases, controllers
+composer require wn/lumen-generators
+https://github.com/webNeat/lumen-generators#installation
+
+--crear tablas de migracion
+php artisan make:migration create_maquinas_table
+Crea achivos en database/migrations
+
 php -S localhost:8000 -t public
+php artisan list
+
+En la carpeta bootstrap/app.php descomentar
+$app->withFacades();
+$app->withEloquent();
+$app->register(App\Providers\AppServiceProvider::class);
+
+php artisan wn:model Maquinas
+
